@@ -1,7 +1,7 @@
 const fs = require('fs');
 const webpack = require('webpack');
 const MultipleCommonsChunkLoadPlugin = require('./MultipleCommonsChunkLoadPlugin');
-const QuizletWaitForCommonChunksPlugin = require('./QuizletWaitForCommonChunksPlugin');
+const MultipleCommonsChunkWaitPlugin = require('./MultipleCommonsChunkWaitPlugin');
 
 const OWN_SOURCE_FOR_HASH = fs.readFileSync(__filename);
 const WAITLOAD_SOURCE = fs.readFileSync(__dirname + '/waitload.js');
@@ -124,7 +124,7 @@ if (typeof parentJsonpFunction !== 'undefined'){
 
       // Wrap async dependencies in QWait
       compiler.apply(
-        new QuizletWaitForCommonChunksPlugin(commonChunkDependents)
+        new MultipleCommonsChunkWaitPlugin(commonChunkDependents)
       );
     },
   };

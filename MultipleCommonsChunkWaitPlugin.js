@@ -7,7 +7,7 @@ const OWN_SOURCE_FOR_HASH = fs.readFileSync(__filename);
 // This plugin should only be invoked once per webpack run because of special
 // casing around non-initial chunks (otherwise they will have multiple QWaits
 // around main).
-module.exports = function QuizletWaitForCommonChunksPlugin(
+module.exports = function MultipleCommonsChunkWaitPlugin(
   commonChunkDependents
 ) {
   function getBundlesToWaitOn(chunk) {
