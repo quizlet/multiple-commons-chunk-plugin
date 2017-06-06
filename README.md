@@ -13,9 +13,11 @@ This plugin properly orders your javascript bundle execution and also defines `Q
 ## Installation and usage
 
 ### The inlined shim
+```js
 window.QWait=function(){QWait.p.push(arguments)};QWait.p=[];
 window.QLoad=function(){QLoad.p.push(arguments)};QLoad.p=[];
 window.webpackJsonP=function(){if(webpackJsonP.l)webpackJsonP.p.push(arguments)};webpackJsonP.l=1;webpackJsonP.p=[];
+```
 
 ### The plugin
 ```sh
@@ -95,6 +97,12 @@ const COMMON_CHUNKS_CONFIG = {
   },
   // A "polyfill" bundle that doesn't actually get passed to CommonsChunkPlugin
   // but allows us to QLoad/QWait properly if the user's browser is lacking
+  i18n: {
+    chunks: 'all',
+    excludeChunks: ['promise_polyfill', 'react', 'redux_and_immutable'],
+    minChunks: 'polyfill',
+  },
+};  
 
 ```
 
