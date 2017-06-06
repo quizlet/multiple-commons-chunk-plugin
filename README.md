@@ -34,7 +34,7 @@ In `webpack.config.js`:
 var MultipleCommonsChunkPlugin = require('MultipleCommonsChunkPlugin');
 
 // ...
-plugins: [new BundleAnalyzerPlugin(
+plugins: [new MultipleCommonsChunkPlugin(
   // An array of entry bundle names (often the keys of the object passed as the `entry` option in webpack config)
   entryBundles,
   // An object where each entry (k,v) pair describes the chunk name and chunk config.
