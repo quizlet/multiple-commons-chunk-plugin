@@ -1,3 +1,3 @@
-const MultipleCommonsChunkPlugin = require('./QuizletCommonChunksPlugin');
+const MultipleCommonsChunkPlugin = require('./MultipleCommonsChunkPlugin');
 
 module.exports = MultipleCommonsChunkPlugin;
