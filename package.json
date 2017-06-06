@@ -1,0 +1,8 @@
+{
+  "name": "multiple-commons-chunk-plugin",
+  "version": "0.1.0",
+  "description": "A webpack plugin to declaratively configure multiple webpack commons chunks.",
+  "main": "index.js",
+  "author": "Alec Winograd <alec@quizlet.com>",
+  "license": "MIT"
+}
