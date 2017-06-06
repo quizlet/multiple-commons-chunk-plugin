@@ -10,7 +10,7 @@ const OWN_SOURCE_FOR_HASH = fs.readFileSync(__filename);
  * <script> tags which fire once the <script> is downloaded which does not give
  * us ordering guarantees.
 */
-module.exports = function QuizletLoadCommonsChunkPlugin(commonChunksConfig) {
+module.exports = function MultipleCommonsChunkLoadPlugin(commonChunksConfig) {
   function getSourceSuffix(chunk) {
     return `;QLoad("Quizlet.Common.${chunk.name}");`;
   }

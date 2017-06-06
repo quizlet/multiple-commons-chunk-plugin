@@ -1,6 +1,6 @@
 const fs = require('fs');
 const webpack = require('webpack');
-const QuizletLoadCommonsChunkPlugin = require('./QuizletLoadCommonsChunkPlugin');
+const MultipleCommonsChunkLoadPlugin = require('./MultipleCommonsChunkLoadPlugin');
 const QuizletWaitForCommonChunksPlugin = require('./QuizletWaitForCommonChunksPlugin');
 
 const OWN_SOURCE_FOR_HASH = fs.readFileSync(__filename);
@@ -60,7 +60,7 @@ if (typeof parentJsonpFunction !== 'undefined'){
         });
       });
 
-      compiler.apply(new QuizletLoadCommonsChunkPlugin(commonsChunkConfig));
+      compiler.apply(new MultipleCommonsChunkLoadPlugin(commonsChunkConfig));
 
       commonsChunkConfig[RUNTIME_CHUNK_NAME] = MAIN_COMMON_CHUNK_CONFIG;
 
